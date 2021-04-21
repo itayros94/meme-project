@@ -63,5 +63,4 @@ function onToggleStroke() {
 // Add Imojie To The Canvas
 function onImojieClick(elEmojie) {
     imojieClick(elEmojie.innerHTML)
-
 }
