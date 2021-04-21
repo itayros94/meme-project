@@ -50,7 +50,6 @@ var gImgs = [
     { id: 14, url: './imgs/15.jpg', keywords: ['happy'] },
     { id: 15, url: './imgs/16.jpg', keywords: ['happy'] },
     { id: 16, url: './imgs/17.jpg', keywords: ['happy'] },
-    { id: 17, url: './imgs/18.jpg', keywords: ['happy'] },
 ];
 
 var gCurrImg = gImgs[0];
@@ -142,7 +141,7 @@ function getImgToDislay() {
     gImgs.forEach(img => {
         imgs.push(img)
     })
-    let displayImg = imgs.slice(0, 17);
+    let displayImg = imgs.slice(0, 16);
     return displayImg
 }
 
