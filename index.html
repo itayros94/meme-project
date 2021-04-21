@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Memes-generator</title>
+</head>
+
+<body onload=" onInit()">
+
+    <header class="navbar-container">
+        <div class="memes-gen hover">memesGen</div>
+        <div onclick="onGalleryClick()" class="gallery-btn hover">Gallery</div>
+    </header>
+
+    <div class="main-container">
+
+        <div class="generator-container">
+
+            <div class="canvas-container">
+                <canvas id="memes-canvas" height="500" width="500" style="border: 1px solid black"></canvas>
+            </div>
+            <div class="editor-container">
+
+                <div class="button-container1">
+                    <input oninput="onSetImgText(this.value)" class="img-text" type="text" placeholder="type text here"><br>
+                    <button onclick="increaseFontSize()">A+</button>
+                    <button onclick="decreaseFontSize()">A-</button>
+                    <button onclick="onTextDown()">⬇</button>
+                    <button onclick="onTextUp()">⬆</button>
+                </div>
+
+                <div class="button-container2">
+                    <button onclick="onTextLeft()">⬅</button>
+                    <button onclick="onTextRight()">➡</button>
+                    <button onclick="onSwitchLine()">⬇⬆</button>
+                    <input oninput="onChangeTextColor(this.value)" type="color">
+                </div>
+
+                <div class="button-container3">
+                    <button onclick="onAddLine()" class="add-line">Add</button>
+                    <button onclick="onDeleteLine()" class="delete-line">Delete</button>
+                    <button onclick="onToggleStroke()">Stroke</button>
+                    <button id="download">Download</button>
+                </div>
+
+                <div class="imojies-container">
+                    <div onclick="onImojieClick(this)">😆</div>
+                    <div onclick="onImojieClick(this)">😍</div>
+                    <div onclick="onImojieClick(this)">😰</div>
+                    <div onclick="onImojieClick(this)">👿</div>
+                    <div onclick="onImojieClick(this)">👍</div>
+                    <div onclick="onImojieClick(this)">🤪</div>
+                    <div onclick="onImojieClick(this)">❤️</div>
+                </div>
+
+                <select onchange="onChangeFont(this.value)" class="fonts">
+                    <option value="Impact">Impact</option>
+                    <option value="Arial">Ariel</option>
+                    <option value='Roboto-font'>Roboto</option>
+                    <option value='ZenDots-font'>ZenDots</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="imgs-gallery"></div>
+        <div class="saved-imgs"></div>
+
+    </div>
+    <div class="footer"><small>@ memesGenerator By Itay rosental</small></div>
+
+    <script src="js/memes-utils.js"></script>
+    <script src="js/memes-servise.js"></script>
+    <script src="js/memes-controller.js"></script>
+    <script src="js/gallery-controller.js"></script>
+</body>
+
+</html>
