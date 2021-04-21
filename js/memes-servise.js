@@ -54,6 +54,7 @@ var gImgs = [
 
 var gCurrImg = gImgs[0];
 
+// Init Function
 function init() {
     gCanvas = document.getElementById('memes-canvas');
     gCtx = gCanvas.getContext('2d');
@@ -64,6 +65,7 @@ function init() {
     onGalleryClick()
 }
 
+// Render Canvas
 function renderCanvas(img) {
     if (!img) {
         drawImage(gImgs[0])
@@ -72,7 +74,7 @@ function renderCanvas(img) {
     }
 }
 
-// Drawing the img on the canvas 
+// Drawing The Img On The Canvas 
 function drawImage(img) {
     const memeImg = new Image();
     memeImg.src = img.url
@@ -84,7 +86,7 @@ function drawImage(img) {
     }, false);
 }
 
-// Draw the text no the canvas
+// Drawing The Text On The Canvas
 function drawText(text, x, y, size, font, color, isStroke) {
     gCtx.fillStyle = 'white'
     gCtx.font = size + `px ${font}`;
@@ -96,7 +98,7 @@ function drawText(text, x, y, size, font, color, isStroke) {
         gCtx.strokeText(text, x, y)
     }
 }
-
+// Drawing The Text On The Img
 function drawImgText(elText) {
     drawImage(gCurrImg)
 }
@@ -106,36 +108,43 @@ function setImgText(text) {
     drawImage(gCurrImg)
 }
 
+// Increase The Font Size By 10
 function increaseFontSize() {
     gMeme.lines[gMeme.selectedLineIdx].size += 10
     drawImage(gCurrImg)
 }
 
+// Decrease The Font Size By 10
 function decreaseFontSize() {
     gMeme.lines[gMeme.selectedLineIdx].size -= 10
     drawImage(gCurrImg)
 }
 
+// Move Line Up 
 function increaseYindex() {
     gMeme.lines[gMeme.selectedLineIdx].y += 10
     drawImage(gCurrImg)
 }
 
+// Move Line Down
 function decreaseYindex() {
     gMeme.lines[gMeme.selectedLineIdx].y -= 10
     drawImage(gCurrImg)
 }
 
+// Move Line Right
 function increaseXindex() {
     gMeme.lines[gMeme.selectedLineIdx].x += 10
     drawImage(gCurrImg)
 }
 
+// Move Line Left
 function decreaseXindex() {
     gMeme.lines[gMeme.selectedLineIdx].x -= 10
     drawImage(gCurrImg)
 }
 
+// Render The Gallery
 function getImgToDislay() {
     let imgs = [];
     gImgs.forEach(img => {
@@ -145,7 +154,7 @@ function getImgToDislay() {
     return displayImg
 }
 
-
+// Switch Lines Function
 function switchLines() {
     gMeme.selectedLineIdx++
         if (gMeme.selectedLineIdx === gMeme.lines.length) {
@@ -153,11 +162,13 @@ function switchLines() {
         }
 }
 
+// Change The Text Color
 function changeTextColor(color) {
     gMeme.lines[gMeme.selectedLineIdx].color = color
     drawImgText(elImgText)
 }
 
+// Add Line 
 function addLine() {
     gMeme.lines.push({
         txt: 'new line',
@@ -171,6 +182,7 @@ function addLine() {
     drawImgText(elImgText)
 }
 
+// Delete line From The "gMeme Array"
 function deleteLine() {
     gMeme.lines.splice(gMeme.selectedLineIdx, 1)
     if (gMeme.selectedLineIdx >= gMeme.lines.length) {
@@ -179,17 +191,20 @@ function deleteLine() {
     drawImgText(elImgText)
 }
 
+// Change The Font Type
 function changeFont(font) {
     gMeme.lines[gMeme.selectedLineIdx].font = font
     drawImgText(elImgText)
 }
 
+// Stroke Toggle - On/Off
 function toggleStroke() {
     gMeme.lines[gMeme.selectedLineIdx].isStroke = !gMeme.lines[gMeme.selectedLineIdx].isStroke
     drawImgText(elImgText)
     console.log(gMeme)
 }
 
+// Add Imojie To The Canvas By Adding A New Line To "gMene Array"
 function imojieClick(emojie) {
     gMeme.lines.push({
         txt: `${emojie}`,
@@ -201,13 +216,9 @@ function imojieClick(emojie) {
     }, )
     gMeme.selectedLineIdx = gMeme.lines.length - 1
     drawImgText(elImgText)
-
 }
 
-
-
-
-// Get img by id - 
+// Get Img By Id 
 function getImageById(imgId) {
     let img = gImgs.find(function(img) {
         if (img.id === imgId) return img
@@ -215,7 +226,7 @@ function getImageById(imgId) {
     return img
 }
 
-// Download canvas - 
+// Download Canvas 
 const download = document.getElementById('download')
 download.addEventListener('click', function(e) {
     var link = document.createElement('a');

@@ -1,7 +1,5 @@
 'use strict'
 
-
-
 // Render The Gallery To the Page
 function renderGallery() {
     var img = getImgToDislay()
@@ -14,7 +12,7 @@ function renderGallery() {
 
 }
 
-// Move to Canvas / editor page
+// Move To The Canvas / Editor page
 function onImgClick(imgId) {
     var elGallery = document.querySelector('.imgs-gallery')
     var elCanvas = document.querySelector('.canvas-container')
@@ -27,7 +25,7 @@ function onImgClick(imgId) {
     let image = getImageById(imgId)
 }
 
-// Move to the gallery page
+// Move To The Gallery Page
 function onGalleryClick() {
     var elEditor = document.querySelector('.editor-container')
     var elCanvas = document.querySelector('.canvas-container');
