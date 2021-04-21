@@ -61,6 +61,8 @@ function init() {
     gCtx.fillStyle = 'pink';
     gCtx.fillRect(0, 0, gCanvas.width, gCanvas.height);
     renderCanvas()
+    renderGallery()
+    onGalleryClick()
 }
 
 function renderCanvas(img) {

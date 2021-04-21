@@ -1,6 +1,6 @@
 'use strict'
 
-renderGallery()
+
 
 // Render The Gallery To the Page
 function renderGallery() {
