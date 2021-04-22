@@ -4,7 +4,6 @@ var gCtx;
 var elImgText = document.querySelector('.img-text')
 var gXindex = 40;
 var gKeywords = { 'happy': 12, 'funny puk': 1 }
-var gSavedMemes = [];
 
 var gMeme = {
     selectedImgId: 5,
@@ -61,6 +60,7 @@ function init() {
     renderCanvas()
     renderGallery()
     onGalleryClick()
+
 }
 
 // Render Canvas

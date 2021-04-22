@@ -5,7 +5,7 @@ function renderGallery() {
     var img = getImgToDislay()
     var strHTML = '';
     strHTML += img.map(img => {
-        return `<img src="${img.url}" onclick="onImgClick(${img.id})">`
+        return `<span class="gallrey-img-container"><img src="${img.url}" onclick="onImgClick(${img.id})"></span>`
     }).join('')
     console.log(strHTML)
     document.querySelector('.imgs-gallery').innerHTML = strHTML
