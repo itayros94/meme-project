@@ -9,7 +9,6 @@ function renderGallery() {
     }).join('')
     console.log(strHTML)
     document.querySelector('.imgs-gallery').innerHTML = strHTML
-
 }
 
 // Move To The Canvas / Editor page

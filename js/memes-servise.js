@@ -58,20 +58,14 @@ var gCurrImg = gImgs[0];
 function init() {
     gCanvas = document.getElementById('memes-canvas');
     gCtx = gCanvas.getContext('2d');
-    gCtx.fillStyle = 'pink';
-    gCtx.fillRect(0, 0, gCanvas.width, gCanvas.height);
     renderCanvas()
     renderGallery()
     onGalleryClick()
 }
 
 // Render Canvas
-function renderCanvas(img) {
-    if (!img) {
-        drawImage(gImgs[0])
-    } else {
-        drawImage(img)
-    }
+function renderCanvas(img = gImgs[0]) {
+    drawImage(img)
 }
 
 // Drawing The Img On The Canvas 
